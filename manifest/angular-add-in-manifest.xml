@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+          xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+          xsi:type="TaskPaneApp">
+
+  <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
+
+  <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
+  <Id>34854996-1111-4deb-9ba0-74d99b0a1112</Id>
+
+  <!--Version. Updates from the store only get triggered if there is a version change. -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>CoolIt Inc.</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+  <DisplayName DefaultValue="Angular Add In Example" />
+  <Description DefaultValue="Angular Add In Example"/>
+
+  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
+  <IconUrl DefaultValue="https://localhost:3000/assets/images/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/images/icon-80.png"/>
+
+  <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
+  <SupportUrl DefaultValue="https://github.com/dgrudenic" />
+
+  <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
+  <AppDomains>
+    <AppDomain>https://localhost:8080</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+    <Host Name="Document" />
+    <Host Name="Presentation"/>
+    <Host Name="Project"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/index.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Description resid="CoolIt.Description" />
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Tab">
+              <Group id="CoolIt.AboutGroup">
+                <Label resid="CoolIt.AboutGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="CoolIt.Icon.16" />
+                  <bt:Image size="32" resid="CoolIt.Icon.32" />
+                  <bt:Image size="80" resid="CoolIt.Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="CoolIt.AboutCommand">
+                  <Label resid="CoolIt.AboutCommand.Label" />
+                  <Supertip>
+                    <Title resid="CoolIt.AboutCommand.TipTitle" />
+                    <Description resid="CoolIt.AboutCommand.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CoolIt.Icon.About.16" />
+                    <bt:Image size="32" resid="CoolIt.Icon.About.32" />
+                    <bt:Image size="80" resid="CoolIt.Icon.About.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>MainTaskpane</TaskpaneId>
+                    <SourceLocation resid="CoolIt.About.Url" />
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="CoolIt.TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Tab">
+              <Group id="CoolIt.AboutGroup">
+                <Label resid="CoolIt.AboutGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="CoolIt.Icon.16" />
+                  <bt:Image size="32" resid="CoolIt.Icon.32" />
+                  <bt:Image size="80" resid="CoolIt.Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="CoolIt.AboutCommand">
+                  <Label resid="CoolIt.AboutCommand.Label" />
+                  <Supertip>
+                    <Title resid="CoolIt.AboutCommand.TipTitle" />
+                    <Description resid="CoolIt.AboutCommand.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CoolIt.Icon.About.16" />
+                    <bt:Image size="32" resid="CoolIt.Icon.About.32" />
+                    <bt:Image size="80" resid="CoolIt.Icon.About.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>MainTaskpane</TaskpaneId>
+                    <SourceLocation resid="CoolIt.About.Url" />
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="CoolIt.TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Tab">
+              <Group id="CoolIt.AboutGroup">
+                <Label resid="CoolIt.AboutGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="CoolIt.Icon.16" />
+                  <bt:Image size="32" resid="CoolIt.Icon.32" />
+                  <bt:Image size="80" resid="CoolIt.Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="CoolIt.AboutCommand">
+                  <Label resid="CoolIt.AboutCommand.Label" />
+                  <Supertip>
+                    <Title resid="CoolIt.AboutCommand.TipTitle" />
+                    <Description resid="CoolIt.AboutCommand.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CoolIt.Icon.About.16" />
+                    <bt:Image size="32" resid="CoolIt.Icon.About.32" />
+                    <bt:Image size="80" resid="CoolIt.Icon.About.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Taskpane4</TaskpaneId>
+                    <SourceLocation resid="CoolIt.About.Url" />
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="CoolIt.TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>           
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="CoolIt.Icon.16" DefaultValue="https://localhost:3000/assets/images/icon-16.png" />
+        <bt:Image id="CoolIt.Icon.32" DefaultValue="https://localhost:3000/assets/images/icon-32.png" />
+        <bt:Image id="CoolIt.Icon.80" DefaultValue="https://localhost:3000/assets/images/icon-80.png" />
+        <bt:Image id="CoolIt.Icon.About.16" DefaultValue="https://localhost:3000/assets/images/about-16.png" />
+        <bt:Image id="CoolIt.Icon.About.32" DefaultValue="https://localhost:3000/assets/images/about-32.png" />
+        <bt:Image id="CoolIt.Icon.About.80" DefaultValue="https://localhost:3000/assets/images/about-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="CoolIt.About.Url" DefaultValue="https://localhost:3000/#about" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="CoolIt.TabLabel" DefaultValue="Angular Add In Example" />
+        <bt:String id="CoolIt.AboutGroupLabel" DefaultValue="Help"></bt:String>
+        <bt:String id="CoolIt.AboutCommand.Label" DefaultValue="About"></bt:String>
+        <bt:String id="CoolIt.AboutCommand.TipTitle" DefaultValue="About Office Add-in"></bt:String>
+        <bt:String id="CoolIt.AboutCommand.Title" DefaultValue="About"></bt:String>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="CoolIt.AboutCommand.Desc" DefaultValue="About  Office Add-in"></bt:String>
+        <bt:String id="CoolIt.Description" DefaultValue="Your Office add-in loaded succesfully. Go to the  tab and click the 'Help' button to get started."></bt:String>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
