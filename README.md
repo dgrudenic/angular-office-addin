@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --ssl --ssl-key ./certs/server.key --ssl-cert ./certs/server.crt --port 3000` for a dev server. Since this is office-js angular if you want to see something you need to put manifest/angular-add-in-manifest.xml file into appropriate place based if you are on Windows or Mac follow the instructions here: [Sideload Office Add-ins for testing](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
 
 ## Code scaffolding
 
